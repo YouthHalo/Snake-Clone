@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmlu2voqr3bmm"]
+[gd_scene load_steps=5 format=3 uid="uid://dmlu2voqr3bmm"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_sfmkq"]
+[ext_resource type="Texture2D" uid="uid://bhy1dmmmoy1b3" path="res://assets/bg.png" id="2_4mgqk"]
+[ext_resource type="PackedScene" uid="uid://ck8jcb3c76ad1" path="res://scenes/snake_segment.tscn" id="2_p2huo"]
+[ext_resource type="PackedScene" uid="uid://0vurj2wylw40" path="res://scenes/hud.tscn" id="2_x6lhc"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_sfmkq")
+snake_scene = ExtResource("2_p2huo")
+
+[node name="HUD" parent="." instance=ExtResource("2_x6lhc")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4mgqk")
+offset = Vector2(500, 550)

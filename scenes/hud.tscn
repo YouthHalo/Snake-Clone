@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://0vurj2wylw40"]
+
+[ext_resource type="FontFile" uid="uid://i0l1d7qy1fya" path="res://assets/minecraftFont.otf" id="1_wuibt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2c85d"]
+bg_color = Color(0.998, 37.143, 37.143, 0.764)
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="ScorePanel" type="Panel" parent="."]
+modulate = Color(0.203922, 1, 1, 1)
+self_modulate = Color(0, 0.286275, 1, 1)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2c85d")
+
+[node name="Score Label" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_top = -6.0
+offset_right = 65.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_wuibt")
+theme_override_font_sizes/font_size = 36
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
