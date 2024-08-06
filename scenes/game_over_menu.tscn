@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkcqvi0w4bj"]
+
+[ext_resource type="Script" path="res://scenes/game_over_menu.gd" id="1_kmg2k"]
+[ext_resource type="FontFile" uid="uid://i0l1d7qy1fya" path="res://assets/minecraftFont.otf" id="1_u1isp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhdq5"]
+bg_color = Color(0.027451, 0.384314, 0.396078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klexm"]
+bg_color = Color(0.588235, 0.882353, 0.588235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3pjb"]
+bg_color = Color(0.588235, 0.784314, 0.588235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chli3"]
+bg_color = Color(0.588235, 1, 0.588235, 1)
+
+[node name="GameOverMenu" type="CanvasLayer"]
+script = ExtResource("1_kmg2k")
+
+[node name="GameOverPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -100.0
+offset_right = 250.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lhdq5")
+
+[node name="ResultLabel" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -69.0
+offset_right = 112.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_u1isp")
+theme_override_font_sizes/font_size = 36
+text = "GAME OVER!"
+
+[node name="Restart Button" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -10.0
+offset_right = 175.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_u1isp")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_klexm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a3pjb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_chli3")
+text = "Play Again"
+
+[connection signal="pressed" from="Restart Button" to="." method="_on_restart_button_pressed"]

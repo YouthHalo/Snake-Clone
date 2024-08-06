@@ -10,6 +10,7 @@ bg_color = Color(0.998, 37.143, 37.143, 0.764)
 [node name="ScorePanel" type="Panel" parent="."]
 modulate = Color(0.203922, 1, 1, 1)
 self_modulate = Color(0, 0.286275, 1, 1)
+texture_filter = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 50.0
